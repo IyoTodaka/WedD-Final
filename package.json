@@ -1,0 +1,23 @@
+{
+  "name": "wedd-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass:css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IyoTodaka/WedD-Final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IyoTodaka/WedD-Final/issues"
+  },
+  "homepage": "https://github.com/IyoTodaka/WedD-Final#readme",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  }
+}
