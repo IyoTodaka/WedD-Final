@@ -15,9 +15,12 @@ const a_choice1 =document.getElementById("a_choice1");
 const a_choice2 =document.getElementById("a_choice2");
 const a_choice3 =document.getElementById("a_choice3");
 const a_choice4 =document.getElementById("a_choice4");
+const openSound =new Audio('audio/open.mp3')
+const stepsSound =new Audio('audio/steps.mp3')
 
 let hole_flag = 0;
 let looked_candle=0;
+let openedFlg=0;
 
 
 //gameListにaxiosを使ってGET_URLから取得したObject型のdateが格納される
@@ -29,8 +32,9 @@ axios.get(GET_URL).then(({data})=>{
 
 })
 
-function OnLinkClick(roomName){
 
+function OnLinkClick(roomName){
+    audioPlay()
     if(roomName=="hole"){
         //穴flagを確認する
 
@@ -41,7 +45,7 @@ function OnLinkClick(roomName){
             roomName="hole2"
         }
     }else if(roomName=="candle"){
-        //キャンドルを見たかのflag、エンディング分岐してもいいかも
+        //キャンドルを見たかのflag、エンディング分岐もできる
         looked_candle=1;
     }else if(roomName=="panel"){
         pass1 = window.prompt("What is the color of the stone", "")
@@ -70,6 +74,7 @@ function OnLinkClick(roomName){
     }
     console.log(roomName)
     
+
     //下のfindRoomByIdでどの部屋か判定する
     const room = findRoomById(roomName);
 
@@ -105,4 +110,13 @@ function findRoomById(roomName){
         }
     }
 
+}
+
+async function audioPlay(){
+    if(openedFlg==1){
+        stepsSound.play()
+    }else{
+        openSound.play()
+        openedFlg=1
+    }
 }
