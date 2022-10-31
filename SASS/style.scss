@@ -82,7 +82,7 @@ header{
     }
 }
 
-.game-body{
+#game_body{
     width: 60%;
     height: 80vh;
     border: solid 3px #000000;
@@ -91,7 +91,7 @@ header{
     
     
 
-    .game-image{
+    #game_image{
         background-image: url(../images/home5.jpeg);
         background-position: center center;
         background-repeat: no-repeat;
