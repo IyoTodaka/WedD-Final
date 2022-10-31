@@ -27,7 +27,7 @@ header .title {
   font-size: 200%;
   font-weight: bold;
   margin: 1%;
-  color: #000;
+  color: rgba(239, 120, 65, 0.551);
 }
 header .title p {
   font-size: 70%;
